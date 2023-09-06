@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="num">
+    <input type="button" value="increment" id="incr">
+    <input type="button" value="decrement" id="decr">
+</body>
+<script>
+    let number=''
+    document.getElementById('incr').addEventListener('click',function(){
+        number=document.querySelector('#num').value
+        document.querySelector('#num').value=Number(number)+1
+    })
+    document.getElementById('decr').addEventListener('click',function(){
+        number=document.querySelector('#num').value
+        document.querySelector('#num').value=Number(number)-1
+    })
+</script>
+</html>

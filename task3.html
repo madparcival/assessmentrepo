@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            gap: 50px;
+        }
+        .container1{
+    
+            height: 300px;
+            width: 150px;
+            background-color: antiquewhite;
+        }
+        .container2{
+            height: 300px;
+            width: 150px;
+            background-color: #ffffa2;
+        }
+        .container1 .element{
+            height: 50px;
+            width: 50px;
+            background-color: rgb(241, 147, 74);
+        }
+        .container2 .element{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container1" id="from">
+    </div>
+    <div class="container2" id="to"></div>
+</body>
+
+
+<script>
+    
+    let to = document.getElementById('to')
+    let from = document.getElementById('from').addEventListener('click',function(){
+    let myDiv=document.createElement('div')
+        myDiv.setAttribute('draggable',true)
+        myDiv.setAttribute('id','myElement')
+        myDiv.setAttribute('class','element')
+        this.appendChild(myDiv)
+        mydrag()
+
+    })
+
+    function mydrag(){
+        let myElements=document.getElementById('myElement')
+        myElements.addEventListener('dragstart',function(e){
+            let current=e.target
+
+            to.addEventListener('dragover',function(e){
+                e.preventDefault()
+            })
+            to.addEventListener('drop',function(e){
+                console.log(current)
+                to.append(current)
+                current=null
+            })
+
+        })
+    }
+        
+</script>
+</html>
