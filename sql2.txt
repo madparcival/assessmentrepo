@@ -1,0 +1,3 @@
+task 2
+
+select * from employees where name not like 'Sanjay%' or name not like 'Sonia%';
