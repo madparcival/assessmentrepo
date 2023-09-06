@@ -1,0 +1,11 @@
+task 1
+
+select * from employees where address like '%HYDERABAS(HYD)%'
+
+task 2
+
+select * from employees where name not like 'Sanjay%' or name not like 'Sonia%';
+
+task3
+
+CREATE TABLE `Employees` (`id` int NOT NULL AUTO_INCREMENT, `name` VARCHAR(100),`salary` int , PRIMARY KEY (`id`));
